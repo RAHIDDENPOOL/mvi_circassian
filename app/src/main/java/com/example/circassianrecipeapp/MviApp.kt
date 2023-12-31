@@ -1,18 +1,24 @@
 package com.example.circassianrecipeapp
 
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.circassianrecipeapp.data.dao.RecipeDao
 import com.example.circassianrecipeapp.navigation.BottomNavigationBar
 import com.example.circassianrecipeapp.navigation.Route
+import com.example.circassianrecipeapp.ui.screens.recipes.RecipesViewModel
 import com.example.circassianrecipeapp.ui.screens.recipes.components.DetailScreen
 import com.example.circassianrecipeapp.view.theme.CircassianRecipeAppTheme
 
 @Composable
-fun MviApp() {
+fun MviApp(recipeDao: RecipeDao) {
+
+    val viewModel: RecipesViewModel = viewModel()
+
     CircassianRecipeAppTheme {
         val navController = rememberNavController()
         NavHost(

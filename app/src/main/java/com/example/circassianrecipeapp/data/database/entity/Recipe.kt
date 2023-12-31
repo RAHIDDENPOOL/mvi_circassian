@@ -14,6 +14,7 @@ data class Recipe(
     val category: String,
     val ingredients: String,
     val instructions: String,
+    val isFavorite: Boolean = false
 ) {
     override fun toString() = name
 }
